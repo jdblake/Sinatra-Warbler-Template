@@ -1,0 +1,44 @@
+===Simple Sinatra Application to Deploy as a .war on Java Application Servers
+
+This is a sinatra app that can be packaged as a .war to be deployed on java application
+servers. The application is in <b><tt>test.rb</tt></b> and the rack configuration is
+in <b><tt>config.ru</tt></b>.
+
+The application makes use of three additional technologies (beyond the simple "hello 
+world" examples typical displayed for sinatra apps. They include:
+
+==Technologies
+
+* JRuby[http://www.jruby.org/]
+
+JRuby is a pure java implementation of the ruby language. It allows ruby apps to "play
+nice" with java apps and various java infrastructure tools (such as JSP/WAR
+application servers)
+
+* bundler[http://gembundler.com/]
+
+A tool to bundle the gems in a ruby application so tha the application can look locally
+for dependencies, and thus be more portable.
+
+* warbler[http://caldersphere.rubyforge.org/warbler/]
+
+Warbler is a tool to turn a ruby app (rails/merb/rack-based) into a .war file for
+deployment on a java application server.
+
+==Application
+
+The application consists of a simple sinatra file (<b><tt>test.rb</tt></b>), a rack
+config file (<b><tt>config.ru</tt></b>), a gemfile with information on the gems to be 
+bundled, and a <b><tt>vendor</tt></b> directory with the bundled gems (I chose to
+package the gems).
+
+==Procedure
+
+* Create the sinatra app
+* Create the gemfile
+* Create the rack config file
+* Install the bundled gems
+* Package the bundled gems
+* Create the warbler config file
+* Make the .war!
+
