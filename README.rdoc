@@ -4,10 +4,10 @@ This is a sinatra app that can be packaged as a .war to be deployed on java appl
 servers. The application is in <b><tt>test.rb</tt></b> and the rack configuration is
 in <b><tt>config.ru</tt></b>.
 
-The application makes use of three additional technologies (beyond the simple "hello 
-world" examples typical displayed for sinatra apps. They include:
+The application makes use of three additional tools (beyond the simple "hello 
+world" examples typical displayed for sinatra apps.
 
-==Technologies
+==Additional Tools
 
 * JRuby[http://www.jruby.org/]
 
@@ -38,7 +38,24 @@ package the gems).
 * Create the gemfile
 * Create the rack config file
 * Install the bundled gems
+
+    bundle install
+
 * Package the bundled gems
+
+    bundle package
+
 * Create the warbler config file
+
+    mkdir config
+    warble config
+
+* Edit the warbler config file (see the file itself for help on this)
+
 * Make the .war!
 
+    warble [compiled] war
+
+
+The .war can then be moved to the app folder for a Java application server (tested to work with Jetty and
+Glassfish so far)
